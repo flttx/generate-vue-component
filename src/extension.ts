@@ -48,7 +48,7 @@ export default {
 }
 
 function createCompontCSS(folderPath: string, componentName: string) {
-	const componentContent = `@import '@/styles/element-variables.scss';`;
+	const componentContent = ``;
 	fs.writeFileSync(path.join(folderPath, `${componentName}.scss`), componentContent);
 }
 
@@ -56,8 +56,7 @@ function createComponentFiles(folderPath: string, componentName: string) {
     
 	createComponentVue(folderPath, componentName);
 	createCompontCSS(folderPath, componentName);
-    const indexContent = `import comp from './${componentName}.vue';
-    export default comp;`;
+    const indexContent = `import comp from './${componentName}.vue';export default comp;`;
     fs.writeFileSync(path.join(folderPath, 'index.js'), indexContent);
 }
 
